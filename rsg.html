@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width" charset="UTF-8">
+
+	<body onload="generate()">
+
+<style>
+div {
+	padding-bottom:10px;
+}
+
+#generate {
+	display:block;
+	margin-top:20px;
+	margin-bottom:40px;
+	margin-right:10px;
+}
+
+.newline {
+	margin-bottom:10px;
+}
+
+#inputString {
+	display:block;
+	margin-top:10px;
+	width:350px;
+}
+
+#resultContainer {
+	background-color:whitesmoke;
+	padding:10px;
+	margin-bottom:20px;
+	max-width:400px;
+}
+
+#inputLength {
+	margin-top:10px;
+	display:block;
+	width:40px;
+}
+
+#fieldName {
+	clear:both;
+	display:inline;
+}
+</style>
+
+		<h2>Random String Generator</h2>
+
+		<h3>Result</h3>
+		<div id="resultContainer">
+			<div id="result"></div>
+		</div>
+
+		<h3>Parameters</h3>
+		<div id="contents">
+			<div id="fieldName"> Length </div> <input type="text" id="inputLength" class="newline" value=16>
+			<div></div>
+			<div id="fieldName"> Characters </div> <textarea id="inputString" class="newline">abcdeghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&* </textarea>
+
+			<input id="generate" type="button" value="Generate" onclick="generate() "autofocus> 
+		</div>
+
+
+	 	<script>
+		function generate() {
+			var string = document.getElementById("inputString").value;
+			var resultstringlen = document.getElementById("inputLength").value;
+			var resultstring = "";
+
+			for(var i=0; i<resultstringlen; i++) {
+				var randnum = Math.floor(Math.random() * (string.length - 1)) + 1;
+				var randchar = string[randnum];
+				resultstring += randchar;	
+			}
+			
+			document.getElementById("result").innerHTML = resultstring;
+		}
+		</script>
+	</body>
+</html>
