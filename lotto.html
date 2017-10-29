@@ -1,0 +1,31 @@
+<html>
+
+<body>
+	<h1>Lotto Number Generator</h1>
+	<p>A little script I whipped up. The autopick machine is rigged. I
+know I would. ;) </p> 
+	<p> Refresh page to generate new numbers. </p>
+	<script>
+		function randnum() {
+			var r = Math.random();
+			var max = 42;
+			var min = 1;
+			r = r * max;
+			r = r + min;
+			r = Math.floor(r);
+			return r;
+		}
+
+		//for each game
+		for(var i=0; i<18; i++) {
+			//print 6 numbers
+			for (var j=0; j<6; j++) {
+				document.write(randnum() + "&nbsp;");
+			}
+			document.write("</br>");
+			document.write("</br>");
+		}
+	</script>
+</body>
+
+</html>

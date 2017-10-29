@@ -1,0 +1,52 @@
+<html>
+
+<body>
+	<h1>Date Generator</h1>
+	<p> Generate dates today's date in various styles.</p> 
+
+	<h2>Salesforce</h2>
+	<script>
+
+		//from https://stackoverflow.com/questions/12409299/how-to-get-current-formatted-date-dd-mm-yyyy-in-javascript-and-append-it-to-an-i
+		function getDate() {
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth()+1; //January is 0!
+
+			var yyyy = today.getFullYear();
+			if(dd<10){
+			    dd='0'+dd;
+			} 
+			if(mm<10){
+			    mm='0'+mm;
+			} 
+			var today = dd+'/'+mm+'/'+yyyy;
+			return today;
+		}
+		
+		document.write(getDate()  + " - MH -&nbsp");
+		
+	</script>
+
+	<h2>Military File Naming </h2>
+	<script>
+
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+
+		var yyyy = today.getFullYear();
+		if(dd<10){
+		    dd='0'+dd;
+		} 
+		if(mm<10){
+		    mm='0'+mm;
+		} 
+		var today = yyyy.toString() + mm.toString() + dd.toString() + " -&nbsp";
+		document.write(today);
+
+		
+	</script>
+</body>
+
+</html>
