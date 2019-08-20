@@ -40,6 +40,6 @@ function test() {
 
 	counter++;
 
-	//input.value = "";
+	input.value = "";
 
 }
