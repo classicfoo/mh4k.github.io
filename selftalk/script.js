@@ -1,7 +1,7 @@
 ﻿console.log("Hello")
 
 var input = document.getElementById("input_box");
-input.value = "aaa";
+//input.value = "aaa";
 
 var filler = document.createElement("div");
 filler.setAttribute("id", "filler");
