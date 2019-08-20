@@ -1,13 +1,18 @@
 ﻿console.log("Hello")
 
 var input = document.getElementById("input_box");
-//input.value = "aaa";
+input.value = "aaa";
 
+var filler = document.createElement("div");
+filler.setAttribute("id", "filler");
+document.getElementById("body").appendChild(filler)
 
 var counter = 1;
 
 
 function test() {
+
+	document.getElementById("body").removeChild(filler)
 
 	var m1 = document.createElement("p");
 	m1.setAttribute("id", "m1");
@@ -28,10 +33,13 @@ function test() {
 
 
 	document.getElementById("body").appendChild(box)
+	
+	document.getElementById("body").appendChild(filler)
 
+	window.scrollTo(0,document.body.scrollHeight);
 
 	counter++;
 
-	input.value = "";
+	//input.value = "";
 
 }
