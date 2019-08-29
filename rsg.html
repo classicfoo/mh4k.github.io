@@ -3,11 +3,15 @@
 	<head>
 		<meta name="viewport" content="width=device-width" charset="UTF-8">
 
-	<body onload="generate()">
+	<!--<body onload="generate()">-->
 
 <style>
 div {
 	padding-bottom:10px;
+}
+
+body{
+  font-family:arial;
 }
 
 #generate {
@@ -63,8 +67,9 @@ div {
 		<div id="resultContainer">
 			<div id="result"></div>
 		</div>
-		<input id="generate" type="button" value="Generate" onclick="generate() "autofocus>
-    <input id="copy" type="button" value="Copy" onclick="copyToClipboard() "autofocus>
+		<input id="generate" type="button" value="Generate & Copy" onclick="generate() "autofocus>
+
+<!--    <input id="copy" type="button" value="Copy" onclick="copyToClipboard() "autofocus>-->
 
 		<div id="contents">
       <h3>Parameters</h3>
@@ -91,6 +96,9 @@ div {
 
 			document.getElementById("result").innerHTML = resultstring;
 
+      copyToClipboard();
+
+      //document.getElementById("result").innerHTML += " - COPIED!"
 		}
 
     function copyToClipboard() {
@@ -105,7 +113,7 @@ div {
         document.execCommand("copy");
         document.body.removeChild(dummy);
 
-        alert("string copied")
+        //alert("string copied")
     }
 
 
