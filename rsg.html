@@ -30,7 +30,7 @@ div {
 #resultContainer {
 	background-color:whitesmoke;
 	padding:10px;
-	margin-bottom:20px;
+	
 	max-width:400px;
 }
 
@@ -44,6 +44,13 @@ div {
 	clear:both;
 	display:inline;
 }
+
+#generate, #copy {
+  display:inline-block;
+  width:200px;
+  height:50px;
+}
+
 </style>
 
 		<h2>Random String Generator</h2>
@@ -52,31 +59,52 @@ div {
 		<div id="resultContainer">
 			<div id="result"></div>
 		</div>
+		<input id="generate" type="button" value="Generate" onclick="generate() "autofocus>
+    <input id="copy" type="button" value="Copy" onclick="copyToClipboard() "autofocus>
+
 
 		<h3>Parameters</h3>
 		<div id="contents">
 			<div id="fieldName"> Length </div> <input type="text" id="inputLength" class="newline" value=16>
 			<div></div>
-			<div id="fieldName"> Characters </div> <textarea id="inputString" class="newline">abcdeghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&* </textarea>
+			<div id="fieldName"> Characters </div> <textarea id="inputString" class="newline">abcdeghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</textarea>
 
-			<input id="generate" type="button" value="Generate" onclick="generate() "autofocus> 
 		</div>
 
 
 	 	<script>
-		function generate() {
-			var string = document.getElementById("inputString").value;
-			var resultstringlen = document.getElementById("inputLength").value;
+      var string = document.getElementById("inputString").value;
+      var resultstringlen = document.getElementById("inputLength").value;
 			var resultstring = "";
+
+		function generate() {
+
+      resultstring = "";
 
 			for(var i=0; i<resultstringlen; i++) {
 				var randnum = Math.floor(Math.random() * (string.length - 1)) + 1;
 				var randchar = string[randnum];
-				resultstring += randchar;	
+				resultstring += randchar;
 			}
-			
+
 			document.getElementById("result").innerHTML = resultstring;
+
 		}
+
+    function copyToClipboard() {
+        var dummy = document.createElement("textarea");
+        // to avoid breaking orgain page when copying more words
+        // cant copy when adding below this code
+        // dummy.style.display = 'none'
+        document.body.appendChild(dummy);
+        //Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
+        dummy.value = resultstring;
+        dummy.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummy);
+    }
+
+
 		</script>
 	</body>
 </html>
