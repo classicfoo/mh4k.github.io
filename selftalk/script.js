@@ -1,7 +1,7 @@
 ﻿console.log("Hello")
 
 var input = document.getElementById("input_box");
-//input.value = "aaa";
+input.value = "aaa";
 
 var content = document.getElementById("content");
 
@@ -31,10 +31,11 @@ function test() {
 	//content.appendChild(filler)
 
 	//window.scrollTo(0,document.body.scrollHeight);
-	content.scrollTo(0,content.scrollHeight);
+	//content.scrollTo(0,content.scrollHeight);
+	content.scrollTop = content.scrollHeight;
 
 	counter++;
 
-	input.value = "";
+	input.value = "aaa";
 
 }
