@@ -3,16 +3,18 @@
 var input = document.getElementById("input_box");
 //input.value = "aaa";
 
+var content = document.getElementById("content");
+
 var filler = document.createElement("div");
 filler.setAttribute("id", "filler");
-document.getElementById("body").appendChild(filler)
+content.appendChild(filler)
 
 var counter = 1;
 
 
 function test() {
 
-	document.getElementById("body").removeChild(filler)
+	//content.removeChild(filler)
 
 	var m1 = document.createElement("p");
 	m1.setAttribute("id", "m1");
@@ -20,23 +22,16 @@ function test() {
 	var m2 = document.createElement("p");
 	m2.setAttribute("id", "m2");
 
-	// var box = m1;
-	//
-	// if (counter / 2 === 0) {
-	//   box = m1
-	// } else {
-	//   box = m2;
-	// }
-
 	var box = counter % 2 == 0 ? m1 : m2 ;
 	box.innerHTML = input.value
 
 
-	document.getElementById("body").appendChild(box)
+	content.appendChild(box)
 	
-	document.getElementById("body").appendChild(filler)
+	//content.appendChild(filler)
 
-	window.scrollTo(0,document.body.scrollHeight);
+	//window.scrollTo(0,document.body.scrollHeight);
+	content.scrollTo(0,content.scrollHeight);
 
 	counter++;
 
