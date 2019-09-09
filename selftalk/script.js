@@ -1,7 +1,7 @@
 ﻿console.log("Hello")
 
 var input = document.getElementById("input_box");
-input.value = "aaa";
+//input.value = "aaa";
 
 var content = document.getElementById("content");
 
@@ -36,6 +36,6 @@ function test() {
 
 	counter++;
 
-	input.value = "aaa";
+	input.value = "";
 
 }
