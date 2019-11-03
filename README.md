@@ -1,5 +1,5 @@
-# michaelhuynh4000.github.io
-# classicfoo
+
+# Classicfoo
 
 [Rsg](rsg.html)
 
