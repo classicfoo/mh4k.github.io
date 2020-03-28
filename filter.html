@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<body>
+
+<h2>Filter</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name"> 
+
+<br/><br/>
+
+<textarea id="ta1" rows="40" cols="100"></textarea>
+
+<textarea id="ta2" rows="40" cols="100"></textarea>
+
+
+<script>
+
+
+document.getElementById("ta1").value = document.getElementById("ta2").value;
+
+function myFunction() {
+
+
+var input, filter, i, txtValue, result;
+  filter = document.getElementById("myInput").value.toUpperCase();
+
+
+
+var ta = document.getElementById("ta2").value;
+var lines = ta.split('\n')
+var result="";
+
+for(var i = 0;i < lines.length;i++){
+
+
+if (lines[i]) {
+      if (lines[i].toUpperCase().indexOf(filter) > -1) {
+        result = result + lines[i] + "\n";
+      }
+}
+document.getElementById("ta1").value = result;
+
+}}
+
+</script>
+
+
+
+</body>
+</html>
